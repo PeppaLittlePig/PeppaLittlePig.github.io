@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="1、找到最耗cpu的进程&amp;emsp;top -c  显示进程信息&amp;emsp;按下大写  P  按照cpu使用率排序&amp;emsp;找到最耗cpu的进程pid为：109878 2、找到最耗cpu的线程&amp;emsp;top -Hp 109878  显示线程信息&amp;emsp;按下大写  P  按照cpu使用率排序&amp;emsp;找到最耗cpu的线程id为：109921">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-08T03:58:56.884Z">
+<meta property="og:updated_time" content="2018-02-08T04:00:38.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单定位线上java服务cpu100%问题">
 <meta name="twitter:description" content="1、找到最耗cpu的进程&amp;emsp;top -c  显示进程信息&amp;emsp;按下大写  P  按照cpu使用率排序&amp;emsp;找到最耗cpu的进程pid为：109878 2、找到最耗cpu的线程&amp;emsp;top -Hp 109878  显示线程信息&amp;emsp;按下大写  P  按照cpu使用率排序&amp;emsp;找到最耗cpu的线程id为：109921">
@@ -374,7 +374,7 @@
 <a id="more"></a>
 <p>3、线程id转为16进制<br>&emsp;printf “%x\n” 109921<br>&emsp;1ad61</p>
 <p>4、查看堆栈信息<br>&emsp;<font color="#FF0000">jstack 109878 | grep “0x1ad61” -C5 –color</font></p>
-<p>显示结果：<br>“Log4j2-AsyncLoggerConfig-2” daemon prio=10 tid=0x00007fb808672000 nid=0x1ad61 runnable [0x00007fb862ffe000]<br>&emsp;&emsp;java.lang.Thread.State: TIMED_WAITING (parking)</p>
+<p>显示结果：<br>“Log4j2-AsyncLoggerConfig-2” daemon prio=10 tid=0x00007fb808672000 nid=<font color="#FF0000">0x1ad61</font> runnable [0x00007fb862ffe000]<br>&emsp;&emsp;java.lang.Thread.State: TIMED_WAITING (parking)</p>
 <p>github上有老哥整理了一些常用的脚本，可以参考参考.<br><a href="https://github.com/oldratlee/useful-scripts" target="_blank" rel="noopener">https://github.com/oldratlee/useful-scripts</a></p>
 
       
