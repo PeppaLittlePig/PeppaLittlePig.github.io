@@ -4,8 +4,8 @@
 
     
   <url>
-    <loc>http://java8.com.cn/%E7%AE%80%E5%8D%95%E5%AE%9A%E4%BD%8D%E7%BA%BF%E4%B8%8Ajava%E6%9C%8D%E5%8A%A1cpu100%E7%9A%84%E9%97%AE%E9%A2%98.html</loc>
-    <lastmod>2018-02-08T06:17:47.584Z</lastmod>
+    <loc>http://java8.com.cn/archives/fbc89d93.html</loc>
+    <lastmod>2018-02-08T07:05:22.484Z</lastmod>
     <data>
         <display>
         <title>简单定位线上java服务cpu100%问题</title>
@@ -21,10 +21,9 @@
     </url>
 
     
-    
   <url>
-    <loc>http://java8.com.cn/java%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4%E5%B0%8F%E8%AE%B0.html</loc>
-    <lastmod>2018-02-08T02:08:14.625Z</lastmod>
+    <loc>http://java8.com.cn/archives/d089d8a4.html</loc>
+    <lastmod>2018-02-08T07:05:22.479Z</lastmod>
     <data>
         <display>
         <title>java相关命令小记(jstack,jstat,jmap,jps)</title>
@@ -41,8 +40,8 @@
 
     
   <url>
-    <loc>http://java8.com.cn/hi.html</loc>
-    <lastmod>2018-02-07T07:19:39.023Z</lastmod>
+    <loc>http://java8.com.cn/archives/d8932aac.html</loc>
+    <lastmod>2018-02-08T07:05:22.474Z</lastmod>
     <data>
         <display>
         <title>hi</title>
@@ -57,4 +56,5 @@
     </data>
     </url>
 
+    
 </urlset>
