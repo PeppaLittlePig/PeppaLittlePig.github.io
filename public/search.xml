@@ -1,66 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title><![CDATA[简单定位线上java服务cpu100%问题]]></title>
-      <url>/archives/fbc89d93.html</url>
-      <content type="html"><![CDATA[<p>1、<strong>找到最耗cpu的进程</strong><br>&emsp;<font color="#FF0000">top -c </font> 显示进程信息<br>&emsp;按下大写 <font color="#FF0000"> P </font> 按照cpu使用率排序<br>&emsp;找到最耗cpu的进程pid为：109878</p>
-<p>2、<strong>找到最耗cpu的线程</strong><br>&emsp;<font color="#FF0000">top -Hp 109878 </font> 显示线程信息<br>&emsp;按下大写 <font color="#FF0000"> P </font> 按照cpu使用率排序<br>&emsp;找到最耗cpu的线程id为：109921</p>
-<a id="more"></a>
-<p>3、<strong>线程id转为16进制</strong><br>&emsp;printf “%x\n” 109921<br>&emsp;1ad61</p>
-<p>4、<strong>查看堆栈信息</strong><br>&emsp;<font color="#FF0000">jstack 109878 | grep “0x1ad61” -C5 –color</font></p>
-<p><strong>显示结果</strong>：<br>“Log4j2-AsyncLoggerConfig-2” daemon prio=10 tid=0x00007fb808672000 nid=<font color="#FF0000">0x1ad61</font> runnable [0x00007fb862ffe000]<br>&emsp;&emsp;java.lang.Thread.State: TIMED_WAITING (parking)</p>
-<p>github上有老哥整理了一些常用的脚本，可以参考参考.<br><a href="https://github.com/oldratlee/useful-scripts" target="_blank" rel="noopener">https://github.com/oldratlee/useful-scripts</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> java </category>
-            
-        </categories>
-        
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[java相关命令小记(jstack,jstat,jmap,jps)]]></title>
-      <url>/archives/d089d8a4.html</url>
-      <content type="html"><![CDATA[<blockquote>
-<p> 简单记录一下相关命令，有些博客写的不错的就直接引用了</p>
-</blockquote>
-<p>jstack(查看线程)、jmap(查看内存)、jstat(性能分析)</p>
-<a id="more"></a>
-<p>1.jstat -gc pid time (jstat -gc 12538 5000)<br>&emsp;&emsp;5秒一次显示进程号为12538的java进程的GC情况<br>&emsp;&emsp;&emsp;S0C：年轻代中第一个survivor（幸存区）的容量 (字节)<br>&emsp;&emsp;&emsp;S1C：年轻代中第二个survivor（幸存区）的容量 (字节)<br>&emsp;&emsp;&emsp;S0U：年轻代中第一个survivor（幸存区）目前已使用空间 (字节)<br>&emsp;&emsp;&emsp;S1U：年轻代中第二个survivor（幸存区）目前已使用空间 (字节)<br>&emsp;&emsp;&emsp;EC：年轻代中Eden（伊甸园）的容量 (字节)<br>&emsp;&emsp;&emsp;OC：Old代的容量 (字节)<br>&emsp;&emsp;&emsp;OU：Old代目前已使用空间 (字节)<br>&emsp;&emsp;&emsp;PC：Perm(持久代)的容量 (字节)<br>&emsp;&emsp;&emsp;PU：Perm(持久代)目前已使用空间 (字节)<br>&emsp;&emsp;&emsp;YGC：从应用程序启动到采样时年轻代中gc次数<br>&emsp;&emsp;&emsp;YGCT：从应用程序启动到采样时年轻代中gc所用时间(s)<br>&emsp;&emsp;&emsp;FGC：从应用程序启动到采样时old代(全gc)gc次数<br>&emsp;&emsp;&emsp;FGCT：从应用程序启动到采样时old代(全gc)gc所用时间(s)<br>&emsp;&emsp;&emsp;GCT：从应用程序启动到采样时gc用的总时间(s) </p>
-<p> 相关内容：<a href="http://www.importnew.com/3146.html" target="_blank" rel="noopener">http://www.importnew.com/3146.html</a></p>
-<p>2.jps -lm 查看java进程pid、主类的名称、程序参数</p>
-<p>3.jstack pid<br>  相关内容：<a href="http://guafei.iteye.com/blog/1815222" target="_blank" rel="noopener">http://guafei.iteye.com/blog/1815222</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> java </category>
-            
-        </categories>
-        
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[hi]]></title>
-      <url>/archives/d8932aac.html</url>
-      <content type="html"><![CDATA[<img src="/archives/d8932aac/sun.jpg" title="sunshine">
-]]></content>
-      
-        <categories>
-            
-            <category> 随笔 </category>
-            
-        </categories>
-        
-        
-    </entry>
-    
-  
-  
+<search>
+  <entry>
+    <title><![CDATA[简单定位线上java服务cpu100%问题]]></title>
+    <url>%2Farchives%2Ffbc89d93.html</url>
+    <content type="text"><![CDATA[1、找到最耗cpu的进程&emsp;top -c 显示进程信息&emsp;按下大写 P 按照cpu使用率排序&emsp;找到最耗cpu的进程pid为：109878 2、找到最耗cpu的线程&emsp;top -Hp 109878 显示线程信息&emsp;按下大写 P 按照cpu使用率排序&emsp;找到最耗cpu的线程id为：109921 3、线程id转为16进制&emsp;printf “%x\n” 109921&emsp;1ad61 4、查看堆栈信息&emsp;jstack 109878 | grep “0x1ad61” -C5 –color 显示结果：“Log4j2-AsyncLoggerConfig-2” daemon prio=10 tid=0x00007fb808672000 nid=0x1ad61 runnable [0x00007fb862ffe000]&emsp;&emsp;java.lang.Thread.State: TIMED_WAITING (parking) github上有老哥整理了一些常用的脚本，可以参考参考.https://github.com/oldratlee/useful-scripts]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[java相关命令小记(jstack,jstat,jmap,jps)]]></title>
+    <url>%2Farchives%2Fd089d8a4.html</url>
+    <content type="text"><![CDATA[简单记录一下相关命令，有些博客写的不错的就直接引用了 jstack(查看线程)、jmap(查看内存)、jstat(性能分析) 1.jstat -gc pid time (jstat -gc 12538 5000)&emsp;&emsp;5秒一次显示进程号为12538的java进程的GC情况&emsp;&emsp;&emsp;S0C：年轻代中第一个survivor（幸存区）的容量 (字节)&emsp;&emsp;&emsp;S1C：年轻代中第二个survivor（幸存区）的容量 (字节)&emsp;&emsp;&emsp;S0U：年轻代中第一个survivor（幸存区）目前已使用空间 (字节)&emsp;&emsp;&emsp;S1U：年轻代中第二个survivor（幸存区）目前已使用空间 (字节)&emsp;&emsp;&emsp;EC：年轻代中Eden（伊甸园）的容量 (字节)&emsp;&emsp;&emsp;OC：Old代的容量 (字节)&emsp;&emsp;&emsp;OU：Old代目前已使用空间 (字节)&emsp;&emsp;&emsp;PC：Perm(持久代)的容量 (字节)&emsp;&emsp;&emsp;PU：Perm(持久代)目前已使用空间 (字节)&emsp;&emsp;&emsp;YGC：从应用程序启动到采样时年轻代中gc次数&emsp;&emsp;&emsp;YGCT：从应用程序启动到采样时年轻代中gc所用时间(s)&emsp;&emsp;&emsp;FGC：从应用程序启动到采样时old代(全gc)gc次数&emsp;&emsp;&emsp;FGCT：从应用程序启动到采样时old代(全gc)gc所用时间(s)&emsp;&emsp;&emsp;GCT：从应用程序启动到采样时gc用的总时间(s) 相关内容：http://www.importnew.com/3146.html 2.jps -lm 查看java进程pid、主类的名称、程序参数 3.jstack pid 相关内容：http://guafei.iteye.com/blog/1815222]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[hi]]></title>
+    <url>%2Farchives%2Fd8932aac.html</url>
+    <content type="text"><![CDATA[]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
 </search>
