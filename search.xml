@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[简单记录java几种单例实现]]></title>
+    <url>%2Farchives%2Fbf0599f3.html</url>
+    <content type="text"><![CDATA[1、饿汉式 12345678public class EagerSingle &#123; private static final EagerSingle instance = new EagerSingle(); private EagerSingle()&#123;&#125; public static EagerSingle getInstance()&#123; return instance; &#125;&#125; 2、懒汉式 1234567891011121314public class LazySingleton &#123; private LazySingleton ()&#123;&#125; private static LazySingleton instance = null; public static LazySingleton getInstance()&#123;//synchronized 至于方法中会影响效率 if(null == instance)&#123; synchronized (LazySingleton.class)&#123;//单线程进入 if(null == instance)&#123; instance = new LazySingleton(); &#125; &#125; &#125; return instance; &#125;&#125;&#125; 3、IoDH (Initialization Demand Holder) 123456789public class Singleton &#123; // IoDH private static class HolderClass &#123; private final static Singleton instance = new Singleton(); &#125; public static Singleton getInstance()&#123; return HolderClass.instance; &#125;&#125;]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[简单定位线上java服务cpu100%问题]]></title>
     <url>%2Farchives%2Ffbc89d93.html</url>
     <content type="text"><![CDATA[1、找到最耗cpu的进程&emsp;top -c 显示进程信息&emsp;按下大写 P 按照cpu使用率排序&emsp;找到最耗cpu的进程pid为：109878 2、找到最耗cpu的线程&emsp;top -Hp 109878 显示线程信息&emsp;按下大写 P 按照cpu使用率排序&emsp;找到最耗cpu的线程id为：109921 3、线程id转为16进制&emsp;printf “%x\n” 109921&emsp;1ad61 4、查看堆栈信息&emsp;jstack 109878 | grep “0x1ad61” -C5 –color 显示结果：“Log4j2-AsyncLoggerConfig-2” daemon prio=10 tid=0x00007fb808672000 nid=0x1ad61 runnable [0x00007fb862ffe000]&emsp;&emsp;java.lang.Thread.State: TIMED_WAITING (parking) github上有老哥整理了一些常用的脚本，可以参考参考.https://github.com/oldratlee/useful-scripts]]></content>
